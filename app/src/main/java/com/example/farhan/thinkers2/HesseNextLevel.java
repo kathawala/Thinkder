@@ -18,11 +18,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 
-public class FirstThinker extends Activity {
+public class HesseNextLevel extends Activity {
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -34,7 +33,7 @@ public class FirstThinker extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_thinker);
+        setContentView(R.layout.activity_hesse_next_level);
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -42,7 +41,7 @@ public class FirstThinker extends Activity {
         mPagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager = (ViewPager) findViewById(R.id.nxtpager);
         mViewPager.setAdapter(mPagerAdapter);
     }
 
@@ -63,7 +62,7 @@ public class FirstThinker extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_first_thinker, menu);
+        getMenuInflater().inflate(R.menu.menu_hesse_next_level, menu);
         return true;
     }
 
@@ -82,18 +81,6 @@ public class FirstThinker extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void nextFrag(View view) {
-        Fragment frag = new WildeFragment();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.pager, frag);
-        ft.addToBackStack(null);
-        ft.commit();
-    }
-
-    public void nextLevel(View view) {
-        Intent intent = new Intent(this, HesseNextLevel.class);
-        startActivity(intent);
-    }
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -109,9 +96,9 @@ public class FirstThinker extends Activity {
             // getItem is called to instantiate the fragment for the given page.
             switch (position) {
                 case 0:
-                    return new HesseFragment();
+                    return new MoreFragment();
                 case 1:
-                    return new WildeFragment();
+                    return new BibliographyFragment();
             }
             return null;
         }
@@ -126,7 +113,7 @@ public class FirstThinker extends Activity {
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_activity_first_thinker).toUpperCase(l);
+                    return getString(R.string.title_activity_hesse_next_level).toUpperCase(l);
                 case 1:
                     return getString(R.string.title_section2).toUpperCase(l);
                 case 2:
@@ -139,7 +126,7 @@ public class FirstThinker extends Activity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class HesseFragment extends Fragment {
+    public static class MoreFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -150,26 +137,26 @@ public class FirstThinker extends Activity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static HesseFragment newInstance(int sectionNumber) {
-            HesseFragment fragment = new HesseFragment();
+        public static MoreFragment newInstance(int sectionNumber) {
+            MoreFragment fragment = new MoreFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public HesseFragment() {
+        public MoreFragment() {
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_first_thinker, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_hesse_next_level, container, false);
             return rootView;
         }
     }
 
-    public static class WildeFragment extends Fragment {
+    public static class BibliographyFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -180,21 +167,21 @@ public class FirstThinker extends Activity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static WildeFragment newInstance(int sectionNumber) {
-            WildeFragment fragment = new WildeFragment();
+        public static BibliographyFragment newInstance(int sectionNumber) {
+            BibliographyFragment fragment = new BibliographyFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public WildeFragment() {
+        public BibliographyFragment() {
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_second_thinker, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_bibliography, container, false);
             return rootView;
         }
     }

@@ -20,6 +20,14 @@
             android:name="com.example.farhan.thinkers2.FirstThinker"
             android:label="@string/title_activity_first_thinker" >
         </activity>
+        <activity
+            android:name="com.example.farhan.thinkers2.HesseNextLevel"
+            android:label="@string/title_activity_hesse_next_level"
+            android:parentActivityName="com.example.farhan.thinkers2.FirstThinker" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.farhan.thinkers2.FirstThinker" />
+        </activity>
     </application>
 
 </manifest>
