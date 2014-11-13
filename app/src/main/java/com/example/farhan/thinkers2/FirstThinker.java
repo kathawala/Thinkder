@@ -31,6 +31,12 @@ public class FirstThinker extends Activity {
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
 
+    public static Button button4;
+    public static Button button3;
+
+    public static final String NXT1 = "com.example.farhan.thinkers2";
+    public static final String NXT2 = "com.example.farhan.thinkers2";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,19 +88,29 @@ public class FirstThinker extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void nextFrag(View view) {
-        Fragment frag = new WildeFragment();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.pager, frag);
-        ft.addToBackStack(null);
-        ft.commit();
-    }
-
     public void nextLevel(View view) {
-        Intent intent = new Intent(this, HesseNextLevel.class);
+        Intent intent = new Intent(view.getContext(), HesseNextLevel.class);
+        Bundle bundle = new Bundle();
+        int id = Integer.parseInt(view.getTag().toString());
+        String more = "Failed to get tag!";
+        String most = "Failed to get tag!";
+        switch (id) {
+            case 1:
+                more = getResources().getString(R.string.hesse_more);
+                most = getResources().getString(R.string.hesse_most);
+                break;
+            case 2:
+                more = getResources().getString(R.string.nietzsche_more);
+                most = getResources().getString(R.string.nietzsche_most);
+                break;
+        }
+        bundle.putString("NXT1", more);
+        bundle.putString("NXT2", most);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
-    /**
+
+/**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
@@ -111,7 +127,7 @@ public class FirstThinker extends Activity {
                 case 0:
                     return new HesseFragment();
                 case 1:
-                    return new WildeFragment();
+                    return new NietzscheFragment();
             }
             return null;
         }
@@ -167,9 +183,10 @@ public class FirstThinker extends Activity {
             View rootView = inflater.inflate(R.layout.fragment_first_thinker, container, false);
             return rootView;
         }
+
     }
 
-    public static class WildeFragment extends Fragment {
+    public static class NietzscheFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -180,23 +197,24 @@ public class FirstThinker extends Activity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static WildeFragment newInstance(int sectionNumber) {
-            WildeFragment fragment = new WildeFragment();
+        public static NietzscheFragment newInstance(int sectionNumber) {
+            NietzscheFragment fragment = new NietzscheFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public WildeFragment() {
+        public NietzscheFragment() {
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_second_thinker, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_nietzsche, container, false);
             return rootView;
         }
+
     }
 
 }

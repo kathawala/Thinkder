@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/hesse_more"
         android:id="@+id/textView"
         android:textSize="18dp"
         android:layout_below="@+id/section_label"

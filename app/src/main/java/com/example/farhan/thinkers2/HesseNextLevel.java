@@ -29,11 +29,17 @@ public class HesseNextLevel extends Activity {
     private static final int NUM_PAGES = 2;
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
+    public static String more;
+    public static String bib;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hesse_next_level);
+
+        Bundle bundle = getIntent().getExtras();
+        more = bundle.getString("NXT1");
+        bib = bundle.getString("NXT2");
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -113,11 +119,9 @@ public class HesseNextLevel extends Activity {
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_activity_hesse_next_level).toUpperCase(l);
+                    return getString(R.string.more_info).toUpperCase(l);
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
+                    return getString(R.string.works).toUpperCase(l);
             }
             return null;
         }
@@ -152,6 +156,8 @@ public class HesseNextLevel extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_hesse_next_level, container, false);
+            TextView text = (TextView) rootView.findViewById(R.id.textView);
+            text.setText(more);
             return rootView;
         }
     }
@@ -182,6 +188,8 @@ public class HesseNextLevel extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_bibliography, container, false);
+            TextView text = (TextView) rootView.findViewById(R.id.textView);
+            text.setText(bib);
             return rootView;
         }
     }
