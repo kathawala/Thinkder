@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nietzsche_quote"
+        android:text="@string/butler_quote"
         android:id="@+id/textView"
         android:gravity="center"
         android:textSize="20sp"
@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nietzsche_year"
+        android:text="@string/butler_year"
         android:id="@+id/textView2"
         android:textSize="20sp"
         android:layout_above="@+id/textView"
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button"
-        android:tag="2"
+        android:tag="3"
         android:onClick="nextLevel"
         android:layout_toEndOf="@+id/section_label"
         android:background="@android:color/transparent"

@@ -13,9 +13,14 @@
     <string name="hesse_more">A prized author from 1920s Germany and a 1960s United States counterculture icon would be a strange way to describe any author other than Hermann Hesse. The loss of moral and spiritual fiber that Hesse perceived in the world around him after World War I survived past his years and was made popular again in the wake of the 1960s counterculture movement in the US. His novels sharply focus on the <b>search for meaning in life</b> and its opposition to the goals of modern society.</string>
     <string name="hesse_quote">"“Whoever wants music instead of noise, joy instead of pleasure, soul instead of gold, creative work instead of business, passion instead of foolery, finds no home in this trivial world of ours.”"</string>
     <string name="more_info">MORE INFO</string>
+    <string name="butler_stats">JUDITH BUTLER</string>
+    <string name="butler_year">(1956-)\n</string>
+    <string name="butler_most">Works:\nGender Trouble  (1990)\nImitation and Gender Insubordination  (1990)</string>
+    <string name="butler_more">Butler\'s big idea is that behaviors seen as masculine or feminine aren\'t based on anything "natural". Sure there are biological differences, but genders only act in certain ways because of stereotypes that are repeated so often that they worm their way into cultural consciousness. Women don\'t have to wear lipstick; men don\'t have to like watching wrestling; we\'re just used to thinking that because we see it so often. And when people "perform" the acts that fit those assumptions, they produce what\'s seen as the reality of how people "are" (the ontology).</string>
+    <string name="butler_quote">"“That the gendered body is performative suggests that it has no ontological status apart from the various acts which constitute its reality.”"</string>
     <string name="nietzsche_stats">FRIEDRICH NIETZSCHE</string>
     <string name="nietzsche_year">(1844-1900)\n</string>
-    <string name="nietzsche_most">Works:\nHuman, All Too Human  (1878)\nThus Spoke Zarathustra  (1885)\nBeyond Good and Evil  (1886)\nEcce Homo</string>
+    <string name="nietzsche_most">Works:\nHuman, All Too Human  (1878)\nThus Spoke Zarathustra  (1885)\nBeyond Good and Evil  (1886)\nEcce Homo  (1908)</string>
     <string name="nietzsche_more">Nietzsche\'s fame and influence spanned across the fields of study from psychoanalysis to art to philosophy. His rejection of absolute truths, condemnation of all types of morality, and strict pessimism regarding the meaning of life are all part of what is now known as <b>nihilism</b>. His brand of nihilism is most famously known for its conclusion that each individual should have the courage to develop his own good and evil, independent of the society around him, and listen to nothing else.</string>
     <string name="nietzsche_quote">"“Convictions are more dangerous enemies of truth than lies.”"</string>
     <string name="works">WORKS</string>

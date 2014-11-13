@@ -27,12 +27,10 @@ public class FirstThinker extends Activity {
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private static final int NUM_PAGES = 2;
+    private static final int NUM_PAGES = 3;
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
 
-    public static Button button4;
-    public static Button button3;
 
     public static final String NXT1 = "com.example.farhan.thinkers2";
     public static final String NXT2 = "com.example.farhan.thinkers2";
@@ -103,6 +101,10 @@ public class FirstThinker extends Activity {
                 more = getResources().getString(R.string.nietzsche_more);
                 most = getResources().getString(R.string.nietzsche_most);
                 break;
+            case 3:
+                more = getResources().getString(R.string.butler_more);
+                most = getResources().getString(R.string.butler_most);
+                break;
         }
         bundle.putString("NXT1", more);
         bundle.putString("NXT2", most);
@@ -128,6 +130,8 @@ public class FirstThinker extends Activity {
                     return new HesseFragment();
                 case 1:
                     return new NietzscheFragment();
+                case 2:
+                    return new ButlerFragment();
             }
             return null;
         }
@@ -212,6 +216,37 @@ public class FirstThinker extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_nietzsche, container, false);
+            return rootView;
+        }
+
+    }
+
+    public static class ButlerFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static ButlerFragment newInstance(int sectionNumber) {
+            ButlerFragment fragment = new ButlerFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public ButlerFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_butler, container, false);
             return rootView;
         }
 

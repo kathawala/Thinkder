@@ -33,7 +33,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button4"
+        android:id="@+id/button"
         android:tag="1"
         android:onClick="nextLevel"
         android:layout_toEndOf="@+id/section_label"
