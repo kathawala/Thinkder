@@ -24,17 +24,27 @@ import android.widget.TextView;
 
 public class FirstThinker extends Activity {
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
+    /*
+        Change this to 5 when there are 5 thinkers ready.
      */
     private static final int NUM_PAGES = 3;
+    /**
+     * The {@link ViewPager} is the container which holds each thinker's card and allows us
+     * to swipe between each one..
+     */
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
 
 
+    /*
+        These strings are used to send information about next level from each thinker.
+     */
     public static final String NXT1 = "com.example.farhan.thinkers2";
     public static final String NXT2 = "com.example.farhan.thinkers2";
 
+    /*
+     * Don't change this method
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +60,9 @@ public class FirstThinker extends Activity {
         mViewPager.setAdapter(mPagerAdapter);
     }
 
+    /*
+     * Don't change this method
+     */
     @Override
     public void onBackPressed() {
         if (mViewPager.getCurrentItem() == 0) {
@@ -63,7 +76,9 @@ public class FirstThinker extends Activity {
     }
 
 
-
+    /*
+     * Don't change this method
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -71,6 +86,9 @@ public class FirstThinker extends Activity {
         return true;
     }
 
+    /*
+     * Don't change this method
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -105,6 +123,17 @@ public class FirstThinker extends Activity {
                 more = getResources().getString(R.string.butler_more);
                 most = getResources().getString(R.string.butler_most);
                 break;
+            /*
+            Replace "thinker4" and "thinker5" with the new thinkers
+            case 4:
+                more = getResources().getString(R.string.thinker4_more);
+                most = getResources().getString(R.string.thinker4_most);
+                break;
+            case 5:
+                more = getResources().getString(R.string.thinker5_more);
+                most = getResources().getString(R.string.thinker5_most);
+                break;
+             */
         }
         bundle.putString("NXT1", more);
         bundle.putString("NXT2", most);
@@ -132,6 +161,13 @@ public class FirstThinker extends Activity {
                     return new NietzscheFragment();
                 case 2:
                     return new ButlerFragment();
+                /*
+                Replace "Thinker4" and "Thinker5" with new thinkers
+                case 3:
+                    return new Thinker4Fragment();
+                case 4:
+                    return new Thinker5Fragment();
+                 */
             }
             return null;
         }
@@ -141,6 +177,9 @@ public class FirstThinker extends Activity {
             return NUM_PAGES;
         }
 
+        /*
+            Not sure if this should be changed when adding thinkers. My guess is it should be.
+         */
         @Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
@@ -157,7 +196,7 @@ public class FirstThinker extends Activity {
     }
 
     /**
-     * A placeholder fragment containing a simple view.
+     * Each thinker has a fragment identical to this.
      */
     public static class HesseFragment extends Fragment {
         /**
@@ -191,16 +230,9 @@ public class FirstThinker extends Activity {
     }
 
     public static class NietzscheFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
+
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
         public static NietzscheFragment newInstance(int sectionNumber) {
             NietzscheFragment fragment = new NietzscheFragment();
             Bundle args = new Bundle();
@@ -222,16 +254,9 @@ public class FirstThinker extends Activity {
     }
 
     public static class ButlerFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
+
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
         public static ButlerFragment newInstance(int sectionNumber) {
             ButlerFragment fragment = new ButlerFragment();
             Bundle args = new Bundle();
@@ -251,5 +276,52 @@ public class FirstThinker extends Activity {
         }
 
     }
+
+/*  public static class Thinker4Fragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public static Thinker4Fragment newInstance(int sectionNumber) {
+            Thinker4Fragment fragment = new Thinker4Fragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public Thinker4Fragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_thinker4, container, false);
+            return rootView;
+        }
+    }
+
+    public static class Thinker5Fragment extends Fragment {
+
+            private static final String ARG_SECTION_NUMBER = "section_number";
+
+            public static Thinker5Fragment newInstance(int sectionNumber) {
+                Thinker5Fragment fragment = new Thinker5Fragment();
+                Bundle args = new Bundle();
+                args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+                fragment.setArguments(args);
+                return fragment;
+            }
+
+            public Thinker5Fragment() {
+            }
+
+            @Override
+            public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                     Bundle savedInstanceState) {
+                View rootView = inflater.inflate(R.layout.fragment_thinker5, container, false);
+                return rootView;
+            }
+
+    }  */
 
 }
