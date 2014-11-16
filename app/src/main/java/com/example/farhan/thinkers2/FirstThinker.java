@@ -31,7 +31,7 @@ public class FirstThinker extends Activity {
     /*
         Change this to 5 when there are 5 thinkers ready.
      */
-    private static final int NUM_PAGES = 3;
+    private static final int NUM_PAGES = 10;
     /**
      * The {@link ViewPager} is the container which holds each thinker's card and allows us
      * to swipe between each one..
