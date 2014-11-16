@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/angelou_quote"
+        android:text="@string/aurelius_quote"
         android:id="@+id/textView"
         android:gravity="center"
         android:textSize="20sp"
@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/angelou_stats"
+        android:text="@string/aurelius_stats"
         android:gravity="center"
         android:id="@+id/textView2"
         android:textSize="20sp"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button"
-        android:tag="10"
+        android:tag="7"
         android:onClick="nextLevel"
         android:layout_toEndOf="@+id/section_label"
         android:background="@android:color/transparent"
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:src="@drawable/angelou"
+        android:src="@drawable/aurelius"
         android:layout_marginTop="15dp"
         android:layout_alignTop="@+id/button"
         android:layout_centerHorizontal="true" />

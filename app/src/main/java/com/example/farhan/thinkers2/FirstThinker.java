@@ -137,6 +137,34 @@ public class FirstThinker extends Activity {
                 more = getResources().getString(R.string.butler_more);
                 most = getResources().getString(R.string.butler_most);
                 break;
+            case 4:
+                more = getResources().getString(R.string.rand_more);
+                most = getResources().getString(R.string.rand_most);
+                break;            
+            case 5:
+                more = getResources().getString(R.string.wilde_more);
+                most = getResources().getString(R.string.wilde_most);
+                break;
+            case 6:
+                more = getResources().getString(R.string.zhuangzi_more);
+                most = getResources().getString(R.string.zhuangzi_most);
+                break;
+            case 7:
+                more = getResources().getString(R.string.aurelius_more);
+                most = getResources().getString(R.string.aurelius_most);
+                break;
+            case 8:
+                more = getResources().getString(R.string.socrates_more);
+                most = getResources().getString(R.string.socrates_most);
+                break;
+            case 9:
+                more = getResources().getString(R.string.spinoza_more);
+                most = getResources().getString(R.string.spinoza_most);
+                break;            
+            case 10:
+                more = getResources().getString(R.string.angelou_more);
+                most = getResources().getString(R.string.angelou_most);
+                break;
             /*
             Replace "thinker4" and "thinker5" with the new thinkers
             case 4:
@@ -175,6 +203,20 @@ public class FirstThinker extends Activity {
                     return new NietzscheFragment();
                 case 2:
                     return new ButlerFragment();
+                case 3:
+                    return new RandFragment();
+                case 4:
+                    return new WildeFragment();
+                case 5:
+                    return new ZhuangziFragment();
+                case 6:
+                    return new AureliusFragment();
+                case 7:
+                    return new SocratesFragment();
+                case 8:
+                    return new SpinozaFragment();
+                case 9:
+                    return new AngelouFragment();
                 /*
                 Replace "Thinker4" and "Thinker5" with new thinkers
                 case 3:
@@ -291,29 +333,167 @@ public class FirstThinker extends Activity {
 
     }
 
-/*  public static class Thinker4Fragment extends Fragment {
+    public static class RandFragment extends Fragment {
 
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        public static Thinker4Fragment newInstance(int sectionNumber) {
-            Thinker4Fragment fragment = new Thinker4Fragment();
+        public static RandFragment newInstance(int sectionNumber) {
+            RandFragment fragment = new RandFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public Thinker4Fragment() {
+        public RandFragment() {
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_thinker4, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_rand, container, false);
+            return rootView;
+        }
+
+    }
+
+    public static class WildeFragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public static WildeFragment newInstance(int sectionNumber) {
+            WildeFragment fragment = new WildeFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public WildeFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_wilde, container, false);
             return rootView;
         }
     }
 
+    public static class ZhuangziFragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public static ZhuangziFragment newInstance(int sectionNumber) {
+            ZhuangziFragment fragment = new ZhuangziFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public ZhuangziFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_zhuangzi, container, false);
+            return rootView;
+        }
+    }
+
+    public static class AureliusFragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public static AureliusFragment newInstance(int sectionNumber) {
+            AureliusFragment fragment = new AureliusFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public AureliusFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_aurelius, container, false);
+            return rootView;
+        }
+    }
+    public static class SocratesFragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public static SocratesFragment newInstance(int sectionNumber) {
+            SocratesFragment fragment = new SocratesFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public SocratesFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_socrates, container, false);
+            return rootView;
+        }
+    }
+    public static class SpinozaFragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public static SpinozaFragment newInstance(int sectionNumber) {
+            SpinozaFragment fragment = new SpinozaFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public SpinozaFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_spinoza, container, false);
+            return rootView;
+        }
+    }
+
+    public static class AngelouFragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public static AngelouFragment newInstance(int sectionNumber) {
+            AngelouFragment fragment = new AngelouFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public AngelouFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_angelou, container, false);
+            return rootView;
+        }
+    }
+
+/*  
     public static class Thinker5Fragment extends Fragment {
 
             private static final String ARG_SECTION_NUMBER = "section_number";
