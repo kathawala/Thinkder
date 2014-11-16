@@ -21,6 +21,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 
 public class FirstThinker extends Activity {
 
@@ -42,6 +46,7 @@ public class FirstThinker extends Activity {
     public static final String NXT1 = "com.example.farhan.thinkers2";
     public static final String NXT2 = "com.example.farhan.thinkers2";
 
+
     /*
      * Don't change this method
      */
@@ -58,6 +63,15 @@ public class FirstThinker extends Activity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mPagerAdapter);
+
+        /* Comment back in when we are ready to push.
+         *
+        Tracker tracker = GoogleAnalytics.getInstance(this).newTracker("UA-56793101-1");
+        tracker.setScreenName("First Level");
+        tracker.send(new HitBuilders.AppViewBuilder().build());
+         */
+
+        getActionBar().setTitle("Thinkder");
     }
 
     /*
@@ -126,8 +140,8 @@ public class FirstThinker extends Activity {
             /*
             Replace "thinker4" and "thinker5" with the new thinkers
             case 4:
-                more = getResources().getString(R.string.thinker4_more);
-                most = getResources().getString(R.string.thinker4_most);
+                more = getResources().getString(R.string.angelou_more);
+                most = getResources().getString(R.string.angelou_most);
                 break;
             case 5:
                 more = getResources().getString(R.string.thinker5_more);
@@ -164,7 +178,7 @@ public class FirstThinker extends Activity {
                 /*
                 Replace "Thinker4" and "Thinker5" with new thinkers
                 case 3:
-                    return new Thinker4Fragment();
+                    return new AngelouFragment();
                 case 4:
                     return new Thinker5Fragment();
                  */

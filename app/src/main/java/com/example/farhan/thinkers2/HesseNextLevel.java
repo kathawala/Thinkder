@@ -20,6 +20,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 
 public class HesseNextLevel extends Activity {
 
@@ -49,6 +53,16 @@ public class HesseNextLevel extends Activity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.nxtpager);
         mViewPager.setAdapter(mPagerAdapter);
+
+        /* Comment back in when we are ready to push.
+         *
+        Tracker tracker = GoogleAnalytics.getInstance(this).newTracker("UA-56793101-1");
+        tracker.setScreenName("First Level");
+        tracker.send(new HitBuilders.AppViewBuilder().build());
+         */
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle("Back");
     }
 
     @Override
