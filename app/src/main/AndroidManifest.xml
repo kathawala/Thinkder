@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.farhan.thinkers2"
+    package="com.farhan.thinkder"
     android:versionCode="1"
     android:versionName="1.0">
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light" >
         <activity
-            android:name="com.example.farhan.thinkers2.TitlePage"
+            android:name="com.farhan.thinkder.TitlePage"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:label="@string/app_name" >
@@ -25,18 +25,18 @@
         <activity
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:name="com.example.farhan.thinkers2.FirstThinker"
+            android:name="com.farhan.thinkder.FirstThinker"
             android:label="@string/title_activity_first_thinker" >
         </activity>
         <activity
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:name="com.example.farhan.thinkers2.HesseNextLevel"
+            android:name="com.farhan.thinkder.HesseNextLevel"
             android:label="@string/title_activity_hesse_next_level"
-            android:parentActivityName="com.example.farhan.thinkers2.FirstThinker" >
+            android:parentActivityName="com.farhan.thinkder.FirstThinker" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.farhan.thinkers2.FirstThinker" />
+                android:value="com.farhan.thinkers2.FirstThinker" />
         </activity>
         <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

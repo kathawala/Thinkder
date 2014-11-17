@@ -1,4 +1,4 @@
-package com.example.farhan.thinkers2;
+package com.farhan.thinkder;
 
 import android.app.Activity;
 import android.content.Intent;
