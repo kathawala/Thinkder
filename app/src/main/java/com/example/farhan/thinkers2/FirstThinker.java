@@ -71,7 +71,7 @@ public class FirstThinker extends Activity {
         tracker.send(new HitBuilders.AppViewBuilder().build());
          */
 
-        getActionBar().setTitle("Thinkder");
+        getActionBar().setTitle("Think'der");
     }
 
     /*
