@@ -65,11 +65,10 @@ public class FirstThinker extends Activity {
         mViewPager.setAdapter(mPagerAdapter);
 
         /* Comment back in when we are ready to push.
-         *
+         */
         Tracker tracker = GoogleAnalytics.getInstance(this).newTracker("UA-56793101-1");
         tracker.setScreenName("First Level");
         tracker.send(new HitBuilders.AppViewBuilder().build());
-         */
 
         getActionBar().setTitle("Think'der");
     }
@@ -168,8 +167,8 @@ public class FirstThinker extends Activity {
             /*
             Replace "thinker4" and "thinker5" with the new thinkers
             case 4:
-                more = getResources().getString(R.string.angelou_more);
-                most = getResources().getString(R.string.angelou_most);
+                more = getResources().getString(R.string.thinker4_more);
+                most = getResources().getString(R.string.thinker4_most);
                 break;
             case 5:
                 more = getResources().getString(R.string.thinker5_more);
@@ -220,7 +219,7 @@ public class FirstThinker extends Activity {
                 /*
                 Replace "Thinker4" and "Thinker5" with new thinkers
                 case 3:
-                    return new AngelouFragment();
+                    return new Thinker4Fragment();
                 case 4:
                     return new Thinker5Fragment();
                  */
