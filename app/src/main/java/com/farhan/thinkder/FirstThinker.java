@@ -10,11 +10,13 @@ import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
@@ -26,7 +28,7 @@ public class FirstThinker extends Activity {
     /*
         Change this to 5 when there are 5 thinkers ready.
      */
-    private static final int NUM_PAGES = 10;
+    private static final int NUM_PAGES = 11;
     /**
      * The {@link ViewPager} is the container which holds each thinker's card and allows us
      * to swipe between each one..
@@ -211,6 +213,8 @@ public class FirstThinker extends Activity {
                     return new SpinozaFragment();
                 case 9:
                     return new AngelouFragment();
+                case 10:
+                    return new FeedbackFragment();
                 /*
                 Replace "Thinker4" and "Thinker5" with new thinkers
                 case 3:
@@ -485,6 +489,39 @@ public class FirstThinker extends Activity {
             View rootView = inflater.inflate(R.layout.fragment_angelou, container, false);
             return rootView;
         }
+    }
+
+    public static class FeedbackFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static FeedbackFragment newInstance(int sectionNumber) {
+            FeedbackFragment fragment = new FeedbackFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public FeedbackFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_feedback, container, false);
+            TextView t = (TextView) rootView.findViewById(R.id.link);
+            Linkify.addLinks(t, Linkify.WEB_URLS);
+            return rootView;
+        }
+
     }
 
 /*  

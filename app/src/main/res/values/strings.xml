@@ -5,6 +5,7 @@
     <string name="Welcome">Welcome to Think\'der</string>
     <string name="Start">Start your journey to the</string>
     <string name="Start2">World of Ideas</string>
+    <string name="feedback_link"><a href='http://goo.gl/forms/FRNzxISE5p'>http://goo.gl/forms/FRNzxISE5p</a></string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_first_thinker">Hermann Hesse</string>
     <string name="hesse_stats">Hermann Hesse\n(1877-1962)\n</string>
@@ -55,5 +56,6 @@
     <string name="title_activity_fragment_container">FragmentContainer</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_hesse_next_level">HesseNextLevel</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
