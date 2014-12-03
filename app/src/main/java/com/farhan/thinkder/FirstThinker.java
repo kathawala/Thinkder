@@ -1,10 +1,14 @@
 package com.farhan.thinkder;
 
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
@@ -16,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -35,8 +40,7 @@ public class FirstThinker extends Activity {
      */
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
-
-
+    private String [] names;
     /*
         These strings are used to send information about next level from each thinker.
      */
@@ -67,6 +71,8 @@ public class FirstThinker extends Activity {
         tracker.setScreenName("First Level");
         tracker.send(new HitBuilders.AppViewBuilder().build());
 
+        names = getResources().getStringArray(R.array.names_array);
+
         getActionBar().setTitle("Think'der");
     }
 
@@ -93,7 +99,53 @@ public class FirstThinker extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_first_thinker, menu);
+        final SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        final MenuItem searchMenuItem = menu.findItem(R.id.search);
+        final SearchView searchView = (SearchView) searchMenuItem.getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchView.clearFocus();
+                searchMenuItem.collapseActionView();
+                searchView.setQuery("", false);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
+        searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener(){
+            @Override
+            public void onFocusChange(View view, boolean queryTextFocused){
+                if(!queryTextFocused){
+                    searchView.clearFocus();
+                    searchMenuItem.collapseActionView();
+                    searchView.setQuery("", false);
+                }
+            }
+        });
+
         return true;
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent){
+        if(Intent.ACTION_SEARCH.equals(intent.getAction())){
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            Pattern pattern = Pattern.compile(query, Pattern.CASE_INSENSITIVE);
+            for(int i = 0; i < names.length; i ++){
+                Matcher matcher = pattern.matcher(names[i]);
+                if(matcher.find()){
+                    //mViewPager.setCurrentItem(mViewPager.getCurrentItem(), false);
+                    mViewPager.setCurrentItem(i);
+                }
+            }
+        }
     }
 
     /*

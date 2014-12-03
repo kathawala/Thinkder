@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="names_array" >
+        <item>Hermann Hesse</item>
+        <item>Friedrich Nietzsche</item>
+        <item>Judith Butler</item>
+        <item>Ayn Rand</item>
+        <item>Oscar Wilde</item>
+        <item>Zhuangzi</item>
+        <item>Marcus Aurelius</item>
+        <item>Socrates</item>
+        <item>Baruch Spinoza</item>
+        <item>Maya Angelou</item>
+    </string-array>
+</resources>
