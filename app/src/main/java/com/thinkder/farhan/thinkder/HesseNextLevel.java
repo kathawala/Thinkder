@@ -1,4 +1,4 @@
-package com.farhan.thinkder;
+package com.thinkder.farhan.thinkder;
 
 import java.util.Locale;
 

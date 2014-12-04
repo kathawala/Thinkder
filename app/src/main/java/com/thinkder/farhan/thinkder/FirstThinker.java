@@ -1,4 +1,4 @@
-package com.farhan.thinkder;
+package com.thinkder.farhan.thinkder;
 
 import java.util.Locale;
 import java.util.regex.Matcher;
@@ -213,6 +213,9 @@ public class FirstThinker extends Activity {
                 more = getResources().getString(R.string.angelou_more);
                 most = getResources().getString(R.string.angelou_most);
                 break;
+            case 11:
+                more = getResources().getString(R.string.mills_more);
+                most = getResources().getString(R.string.mills_most);
             /*
             Replace "thinker4" and "thinker5" with the new thinkers
             case 4:
@@ -266,7 +269,7 @@ public class FirstThinker extends Activity {
                 case 9:
                     return new AngelouFragment();
                 case 10:
-                    return new FeedbackFragment();
+                    return new MillsFragment();
                 /*
                 Replace "Thinker4" and "Thinker5" with new thinkers
                 case 3:
@@ -543,39 +546,28 @@ public class FirstThinker extends Activity {
         }
     }
 
-    public static class FeedbackFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
+    public static class MillsFragment extends Fragment {
+
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static FeedbackFragment newInstance(int sectionNumber) {
-            FeedbackFragment fragment = new FeedbackFragment();
+        public static MillsFragment newInstance(int sectionNumber) {
+            MillsFragment fragment = new MillsFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public FeedbackFragment() {
+        public MillsFragment() {
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_feedback, container, false);
-            TextView t = (TextView) rootView.findViewById(R.id.link);
-            Linkify.addLinks(t, Linkify.WEB_URLS);
+            View rootView = inflater.inflate(R.layout.fragment_mills, container, false);
             return rootView;
         }
-
     }
-
 /*  
     public static class Thinker5Fragment extends Fragment {
 
